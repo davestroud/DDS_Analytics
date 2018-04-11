@@ -16,6 +16,7 @@ library(recipes)
 library(yardstick)
 library(corrr)
 library(readxl)
+library(tidyverse)
 ```
 
 
@@ -24,6 +25,7 @@ library(readxl)
 DDSA <- read_excel("CaseStudy2-data.xlsx")
 View(DDSA)
 ```
+
 
 
 
