@@ -23,17 +23,21 @@ library(tidyverse)
 ```{r}
 DDSA <- read_excel("CaseStudy2-data.xlsx")
 
-# Convert data to tbl class.
+# Convert data to tbl class to make data easier to manage
 DDSA <- tbl_df(DDSA)
 ```
-
-
-
 
 ```{r}
 # View observations and variables
 glimpse(DDSA)
 ```
+
+```{r}
+# View summary statistics
+summary(DDSA)
+```
+
+
 
 ```{r}
 # Split test/training sets ~ uses the rsample package
