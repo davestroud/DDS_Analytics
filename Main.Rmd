@@ -38,8 +38,9 @@ summary(DDSA)
 ```
 
 
+
 ```{r}
-# Changed Distance from home to a factor variable
+# Changed the following variables to categorical to eventually have a LifeSatisfaction variable
 DDSA$DistanceFromHome <- cut(DDSA$DistanceFromHome, breaks = c(-Inf, 9, 21, Inf), labels=c("Poor", "Fair", "Good"))
 
 DDSA$RelationshipSatisfaction <- cut(DDSA$RelationshipSatisfaction, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
@@ -48,8 +49,14 @@ DDSA$WorkLifeBalance <- cut(DDSA$WorkLifeBalance, breaks = c(-Inf, 2, 3, Inf), l
 
 ```
 
+```{r}
+# Is there a relationship between Age and Income. 
+# Color each point based on the Gender of the participant
+ggplot(data=DDSA) +
+  geom_point(mapping = aes(x = Age, y = MonthlyIncome, color=Gender)) +
+  geom_smooth(mapping = aes(x = Age, y = MonthlyIncome))
 
-
+```
 
 
 
