@@ -41,7 +41,17 @@ summary(DDSA)
 ```{r}
 # Changed Distance from home to a factor variable
 DDSA$DistanceFromHome <- cut(DDSA$DistanceFromHome, breaks = c(-Inf, 9, 21, Inf), labels=c("Poor", "Fair", "Good"))
+
+DDSA$RelationshipSatisfaction <- cut(DDSA$RelationshipSatisfaction, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
+
+DDSA$WorkLifeBalance <- cut(DDSA$WorkLifeBalance, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
+
 ```
+
+
+
+
+
 
 
 ```{r}
