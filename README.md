@@ -2,3 +2,7 @@
 
 ### Your team has been given a dataset (CaseStudy2Data.zip) to conduct exploratory data analysis (EDA) to determine factors that lead to attrition.  You should identify (at least) the top three factors that contribute to turnover. There may or may not be a need to create derived attributes/variables. The business is also interested in learning about any job role specific trends that may exist in the data set (e.g., “Data Scientists have the highest job satisfaction”). You can also provide any other interesting trends and observations from your analysis. The analysis should be backed up by robust experimentation and (where applicable) appropriate visualization. Experiments and analysis must be conducted in R. If needed, consult with the business owner to get clarifications on the dataset or business goals. 
 
+
+
+### Summary of Data
+#### Data Set has 1,470 observations with 35 variables. Nine of the variables are categorial, while the remaining 26 are numeric. 
