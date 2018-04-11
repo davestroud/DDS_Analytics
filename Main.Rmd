@@ -49,6 +49,25 @@ DDSA$WorkLifeBalance <- cut(DDSA$WorkLifeBalance, breaks = c(-Inf, 2, 3, Inf), l
 
 ```
 
+
+```{r}
+ggplot(data = DDSA) +
+  geom_bar(mapping = aes(x=DistanceFromHome))
+```
+
+
+```{r}
+ggplot(data = DDSA) +
+  geom_bar(mapping = aes(x=RelationshipSatisfaction))
+```
+
+```{r}
+ggplot(data = DDSA) +
+  geom_bar(mapping = aes(x=WorkLifeBalance))
+```
+
+
+
 ```{r}
 # Is there a relationship between Age and Income. 
 # Color each point based on the Gender of the participant
