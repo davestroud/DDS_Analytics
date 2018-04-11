@@ -20,10 +20,11 @@ library(tidyverse)
 ```
 
 
-
 ```{r}
 DDSA <- read_excel("CaseStudy2-data.xlsx")
-View(DDSA)
+
+# Convert data to tbl class.
+DDSA <- tbl_df(DDSA)
 ```
 
 
