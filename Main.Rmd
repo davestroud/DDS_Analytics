@@ -38,6 +38,11 @@ summary(DDSA)
 ```
 
 
+```{r}
+# Changed Distance from home to a factor variable
+DDSA$DistanceFromHome <- cut(DDSA$DistanceFromHome, breaks = c(-Inf, 9, 21, Inf), labels=c("Poor", "Fair", "Good"))
+```
+
 
 ```{r}
 # Split test/training sets ~ uses the rsample package

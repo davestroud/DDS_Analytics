@@ -6,3 +6,5 @@
 
 ### Summary of Data
 #### Data Set has 1,470 observations with 35 variables. Nine of the variables are categorial, while the remaining 26 are numeric. 
+
+#### Changed DistanceFromHome, RelationshipSatisfaction and WorkLifeBalance to categorical variable to satisfy the requirement of having a Life Satisfaction variable. 
