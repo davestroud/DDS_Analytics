@@ -30,6 +30,14 @@ table(glm.pred,Direction.2005)
 mean(glm.pred==Direction.2005)
 
 # Fit smaller
+glm.fit=glm(Direction~Lag1+Lag2,
+            data = Smarket,family = binomial, subset = train)
+glm.probs=predict(glm.fit,newdata = Smarket[!train,], type = "response")
+glm.pred = ifelse(glm.probs > 0.5,"Up","Down")
+Direction.2005=Smarket$Direction[!train]
+table(glm.pred,Direction.2005)
+mean(glm.pred==Direction.2005)
 
 
+summary(glm.fit)
 
