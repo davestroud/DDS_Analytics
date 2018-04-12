@@ -17,6 +17,7 @@ library(yardstick)
 library(corrr)
 library(readxl)
 library(tidyverse)
+library(glmnet)
 ```
 
 
@@ -36,6 +37,7 @@ glimpse(DDSA)
 # View summary statistics
 summary(DDSA)
 ```
+
 
 
 
@@ -74,8 +76,25 @@ ggplot(data = DDSA) +
 ggplot(data=DDSA) +
   geom_point(mapping = aes(x = Age, y = MonthlyIncome, color=Gender)) +
   geom_smooth(mapping = aes(x = Age, y = MonthlyIncome))
+```
+
+
+
+
+
+
+
+```{r}
+
+fit <- lm(DailyRate ~ Age + HourlyRate + MonthlyIncome + MonthlyRate, data = DDSA)
+summary(fit)
 
 ```
+
+
+# Multiple Linear Regression Example 
+fit <- lm(y ~ x1 + x2 + x3, data=mydata)
+summary(fit) # show results
 
 
 
@@ -93,5 +112,18 @@ train_tbl <- training(train_test_split)
 test_tbl <- testing(train_test_split)
 ```
 
+
+```{r}
+# Convert attrition to a factor to logistic regression
+DDSA$Attrition = as.factor(DDSA$Attrition)
+```
+
+
+
+```{r}
+
+
+
+```
 
 
