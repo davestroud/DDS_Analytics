@@ -8,3 +8,8 @@
 #### Data Set has 1,470 observations with 35 variables. Nine of the variables are categorial, while the remaining 26 are numeric. 
 
 #### Changed DistanceFromHome, RelationshipSatisfaction and WorkLifeBalance to categorical variable to satisfy the requirement of having a Life Satisfaction variable. 
+
+#### Is there a relationship between Age and Income. Color each point based on the Gender of the participant. 
+#### What about Life Satisfaction?  
+
+#### Changed Attrition variable to a factor from a string to prepare for logistic regression analysis. 
