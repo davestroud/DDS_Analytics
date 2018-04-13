@@ -26,6 +26,9 @@ DDSA <- read_excel("CaseStudy2-data.xlsx")
 
 # Convert data to tbl class to make data easier to manage
 DDSA <- tbl_df(DDSA)
+
+# Convert attrition to a factor to logistic regression
+DDSA$Attrition = as.factor(DDSA$Attrition)
 ```
 
 ```{r}
@@ -37,8 +40,6 @@ glimpse(DDSA)
 # View summary statistics
 summary(DDSA)
 ```
-
-
 
 
 ```{r}
@@ -84,20 +85,6 @@ ggplot(data=DDSA) +
 
 
 
-```{r}
-
-fit <- lm(DailyRate ~ Age + HourlyRate + MonthlyIncome + MonthlyRate, data = DDSA)
-summary(fit)
-
-```
-
-
-# Multiple Linear Regression Example 
-fit <- lm(y ~ x1 + x2 + x3, data=mydata)
-summary(fit) # show results
-
-
-
 
 ```{r}
 # Split test/training sets ~ uses the rsample package
@@ -113,17 +100,8 @@ test_tbl <- testing(train_test_split)
 ```
 
 
-```{r}
-# Convert attrition to a factor to logistic regression
-DDSA$Attrition = as.factor(DDSA$Attrition)
-```
 
 
 
-```{r}
-
-
-
-```
 
 
