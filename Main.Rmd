@@ -28,7 +28,7 @@ DDSA <- read_excel("CaseStudy2-data.xlsx")
 DDSA <- tbl_df(DDSA)
 
 # Convert attrition to a factor to logistic regression
-DDSA$Attrition = as.factor(DDSA$Attrition)
+#DDSA$Attrition = as.factor(DDSA$Attrition)
 ```
 
 ```{r}
@@ -78,8 +78,6 @@ ggplot(data=DDSA) +
   geom_point(mapping = aes(x = Age, y = MonthlyIncome, color=Gender)) +
   geom_smooth(mapping = aes(x = Age, y = MonthlyIncome))
 ```
-
-
 
 
 
