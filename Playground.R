@@ -1,12 +1,18 @@
 # Load the following packages
-library(tidyquant)  # Loads tidyverse and several other pkgs 
-library(readxl)     # Super simple excel reader
-library(h2o)        # Professional grade ML pkg
-library(lime)       # Explain complex black-box ML models
+library(tidyverse)
+library(caret)
 
 DDSA <- read_excel("CaseStudy2-data.xlsx")
 
-# View first 10 rows
-DDSA[1:10,] %>%
-  knitr::kable(caption = "First 10 rows")
+nrow(DDSA)
 
+table(DDSA$Attrition)
+
+prop.table(table(DDSA$Attrition))
+
+summary(DDSA$MonthlyIncome)
+
+summary(DDSA$TotalWorkingYears)
+
+
+table(DDSA$JobRole)
