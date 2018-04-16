@@ -14,3 +14,10 @@ DDSA <- read_excel("CaseStudy2-data.xlsx")
 DDSA <- tbl_df(DDSA)
 
 glimpse(DDSA)
+
+
+# Split test/training sets
+set.seed(100)
+train_test_split <- initial_split(DDSA, prop = 0.8)
+train_test_split
+
