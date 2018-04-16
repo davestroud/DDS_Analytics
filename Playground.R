@@ -21,3 +21,7 @@ set.seed(100)
 train_test_split <- initial_split(DDSA, prop = 0.8)
 train_test_split
 
+
+# Retrieve train and test sets
+train_tbl <- training(train_test_split)
+test_tbl  <- testing(train_test_split) 
