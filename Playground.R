@@ -1,27 +1,12 @@
-# Load libraries
-library(keras)
-library(lime)
-library(tidyquant)
-library(rsample)
-library(recipes)
-library(yardstick)
-library(corrr)
-library(readxl)
+# Load the following packages
+library(tidyquant)  # Loads tidyverse and several other pkgs 
+library(readxl)     # Super simple excel reader
+library(h2o)        # Professional grade ML pkg
+library(lime)       # Explain complex black-box ML models
 
 DDSA <- read_excel("CaseStudy2-data.xlsx")
 
-# Convert data to tbl class to make data easier to manage
-DDSA <- tbl_df(DDSA)
+# View first 10 rows
+DDSA[1:10,] %>%
+  knitr::kable(caption = "First 10 rows")
 
-glimpse(DDSA)
-
-
-# Split test/training sets
-set.seed(100)
-train_test_split <- initial_split(DDSA, prop = 0.8)
-train_test_split
-
-
-# Retrieve train and test sets
-train_tbl <- training(train_test_split)
-test_tbl  <- testing(train_test_split) 
