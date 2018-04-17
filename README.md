@@ -14,3 +14,6 @@
 
 #### Changed Attrition variable to a factor from a string to prepare for logistic regression analysis. 
 
+#### The fundamental idea behind a random forest is to combine many decision trees into a single model.
+
+#### To understand the random forest model, we must first learn about the decision tree, the basic building block of a random forest
