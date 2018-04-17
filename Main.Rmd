@@ -119,6 +119,7 @@ predictionCart <- predict(modelCart, newdata=test_tbl, type="class")
 t1 <- table(test_tbl$Attrition, predictionCart)
 print(t1)
 
+# Confusion Matrix info: http://cs229.stanford.edu/section/evaluation_metrics.pdf
 ```
 
 
@@ -126,12 +127,15 @@ print(t1)
 #CART model accuracy
 (t1[1]+t1[4])/(nrow(test_tbl))
 ```
-```
+
 
 ```{r}
-
+# Random Forest model
 modelRf = randomForest(Attrition ~ ., data=train_tbl, ntree = 100, mtry = 5, importance = TRUE, method="class")
 print(modelRf)
+
+# Random Forest info: https://medium.com/@williamkoehrsen/random-forest-simple-explanation-377895a60d2d
+
 ```
 
 ```{r}
