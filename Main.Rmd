@@ -117,10 +117,15 @@ predictionCart <- predict(modelCart, newdata=test_tbl, type="class")
 #CART Accuracy
 #Confusion matrix 
 t1 <- table(test_tbl$Attrition, predictionCart)
+print(t1)
+
+```
 
 
+```{r}
 #CART model accuracy
 (t1[1]+t1[4])/(nrow(test_tbl))
+```
 ```
 
 ```{r}
