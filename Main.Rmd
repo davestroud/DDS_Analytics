@@ -128,15 +128,18 @@ print(t1)
 (t1[1]+t1[4])/(nrow(test_tbl))
 ```
 
-
+### Need to plot ROC curve
 ```{r}
 # Random Forest model
 modelRf = randomForest(Attrition ~ ., data=train_tbl, ntree = 100, mtry = 5, importance = TRUE, method="class")
 print(modelRf)
 
 # Random Forest info: https://medium.com/@williamkoehrsen/random-forest-simple-explanation-377895a60d2d
-
+# OOB estimate of  error rate: 13.34% ~ 
 ```
+
+
+
 
 ```{r}
 #OOB vs No. Of Trees
