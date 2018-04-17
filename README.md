@@ -17,3 +17,7 @@
 #### The fundamental idea behind a random forest is to combine many decision trees into a single model.
 
 #### To understand the random forest model, we must first learn about the decision tree, the basic building block of a random forest
+
+#### Confusion Matrix info: http://cs229.stanford.edu/section/evaluation_metrics.pdf
+
+# Random Forest info: https://medium.com/@williamkoehrsen/random-forest-simple-explanation-377895a60d2d
