@@ -15,15 +15,15 @@ library(randomForest)
 
 raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
 
-
+# Change characters to factors for more meaningfull analysis
 DDSA <- raw_DDSA%>%
   mutate_if(is.character, as.factor) %>%
   select(Attrition, everything())
 
-
 glimpse(DDSA)
 
 
+# Build training and test sets
 set.seed(101)
 library(caTools)
 
@@ -35,7 +35,6 @@ test = subset(DDSA, split == FALSE)
 
 # Random Forrest model
 modelRf = randomForest(Attrition ~ ., data=train, ntree = 100, mtry = 5, importance = TRUE, method="class")
-
 print(modelRf)
 
 #OOB vs No. Of Trees
