@@ -53,3 +53,10 @@ title(main="Error Rates Random Forest")
 impVar <- round(randomForest::importance(modelRf), 2)
 impVar[order(impVar[,3], decreasing=TRUE),]
 
+
+# Focus on critical features of attrition
+attrition_critical_features <- DDSA %>%
+  tibble::as_tibble() %>%
+  select(Attrition, OverTime,TotalWorkingYears,Age) %>%
+  rowid_to_column(var = "Case")
+attrition_critical_features
