@@ -21,3 +21,6 @@
 #### Confusion Matrix info: http://cs229.stanford.edu/section/evaluation_metrics.pdf
 
 # Random Forest info: https://medium.com/@williamkoehrsen/random-forest-simple-explanation-377895a60d2d
+
+
+#### How to interpret confusion matrix for Random Forest https://stats.stackexchange.com/questions/30691/how-to-interpret-oob-and-confusion-matrix-for-random-forest
