@@ -1,6 +1,4 @@
 # Load the following packages
-library(keras)
-library(lime)
 library(tidyquant)
 library(rsample)
 library(recipes)
@@ -23,7 +21,6 @@ DDSA <- raw_DDSA%>%
 
 # Glimpse is a better way to view the data
 glimpse(DDSA)
-
 
 # Build training and test sets
 set.seed(101)
@@ -54,9 +51,9 @@ impVar <- round(randomForest::importance(modelRf), 2)
 impVar[order(impVar[,3], decreasing=TRUE),]
 
 
-# Focus on critical features of attrition
-attrition_critical_features <- DDSA %>%
+# Most important variables of attrition
+attrition_variables <- DDSA %>%
   tibble::as_tibble() %>%
   select(Attrition, OverTime,TotalWorkingYears,Age) %>%
   rowid_to_column(var = "Case")
-attrition_critical_features
+attrition_variables
