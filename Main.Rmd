@@ -22,16 +22,28 @@ library(rpart)
 library(rpart.plot)
 library(randomForest)
 ```
+```{r}
+# Load raw data
+raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
+
+# Change characters to factors for more meaningfull analysis
+DDSA <- raw_DDSA%>%
+  mutate_if(is.character, as.factor) %>%
+  select(Attrition, everything())
+```
 
 
 ```{r}
 DDSA <- read_excel("CaseStudy2-data.xlsx")
 
 # Convert data to tbl class to make data easier to manage
-DDSA <- tbl_df(DDSA)
+# DDSA <- tbl_df(DDSA)
 
 # Convert attrition to a factor to logistic regression
 #DDSA$Attrition = as.factor(DDSA$Attrition)
+
+# attach so we don't have to keep writing DDSA$
+attach(DDSA)
 ```
 
 ```{r}
@@ -44,7 +56,7 @@ glimpse(DDSA)
 summary(DDSA)
 ```
 
-
+  
 ```{r}
 # Changed the following variables to categorical to eventually have a LifeSatisfaction variable
 DDSA$DistanceFromHome <- cut(DDSA$DistanceFromHome, breaks = c(-Inf, 9, 21, Inf), labels=c("Poor", "Fair", "Good"))
@@ -124,7 +136,36 @@ t1 <- table(test_tbl$Attrition, predictionCart)
 (t1[1]+t1[4])/(nrow(test_tbl))
 ```
 
+```{r}
+# Random Forrest model
+modelRf = randomForest(Attrition ~ ., data=train_tbl, ntree = 100, mtry = 5, importance = TRUE, method="class")
+print(modelRf)
+```
+
+```{r}
+#OOB vs No. Of Trees
+# Out-of-bag (OOB) error ~ a method of measuring the prediction error of random forests, 
+# boosted decision trees, and other machine learning models utilizing bootstrap aggregating 
+#(bagging) to sub-sample data samples used for training.
+plot(modelRf, main="")
+legend("topright", c("OOB", "0", "1"), text.col=1:6, lty=1:3, col=1:3)
+title(main="Error Rates Random Forest")
+```
 
 
+```{r}
+## List the importance of the variables.
+impVar <- round(randomForest::importance(modelRf), 2)
+impVar[order(impVar[,3], decreasing=TRUE),]
+```
+
+```{r}
+# Most important variables of attrition
+attrition_variables <- DDSA %>%
+  tibble::as_tibble() %>%
+  select(Attrition, OverTime,Age, MonthlyIncome) %>%
+  rowid_to_column(var = "Case")
+attrition_variables
+```
 
 
