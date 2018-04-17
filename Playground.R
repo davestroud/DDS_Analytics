@@ -33,11 +33,7 @@ split = sample.split(DDSA$Attrition, SplitRatio = 0.60)
 train = subset(DDSA, split == TRUE)
 test = subset(DDSA, split == FALSE)
 
-
-#Load Random Forest package
-library(randomForest)
-
-
+# Random Forrest model
 modelRf = randomForest(Attrition ~ ., data=train, ntree = 100, mtry = 5, importance = TRUE, method="class")
 
 print(modelRf)
