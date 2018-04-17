@@ -8,8 +8,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-library(keras)
-library(lime)
 library(tidyquant)
 library(rsample)
 library(recipes)
@@ -22,6 +20,8 @@ library(rpart)
 library(rpart.plot)
 library(randomForest)
 ```
+
+
 ```{r}
 # Load raw data
 raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
@@ -30,21 +30,10 @@ raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
 DDSA <- raw_DDSA%>%
   mutate_if(is.character, as.factor) %>%
   select(Attrition, everything())
-```
-
-
-```{r}
-DDSA <- read_excel("CaseStudy2-data.xlsx")
-
-# Convert data to tbl class to make data easier to manage
-# DDSA <- tbl_df(DDSA)
-
-# Convert attrition to a factor to logistic regression
-#DDSA$Attrition = as.factor(DDSA$Attrition)
-
 # attach so we don't have to keep writing DDSA$
 attach(DDSA)
 ```
+
 
 ```{r}
 # View observations and variables
@@ -137,7 +126,7 @@ t1 <- table(test_tbl$Attrition, predictionCart)
 ```
 
 ```{r}
-# Random Forrest model
+
 modelRf = randomForest(Attrition ~ ., data=train_tbl, ntree = 100, mtry = 5, importance = TRUE, method="class")
 print(modelRf)
 ```
