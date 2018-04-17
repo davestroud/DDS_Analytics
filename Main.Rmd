@@ -80,10 +80,6 @@ ggplot(data=DDSA) +
 ```
 
 
-
-
-
-
 ```{r}
 # Split test/training sets ~ uses the rsample package
 set.seed(100)
@@ -97,8 +93,14 @@ train_tbl <- training(train_test_split)
 test_tbl <- testing(train_test_split)
 ```
 
+```{r}
+table(test_tbl$Attrition)
+```
 
 
+```{r}
+237/nrow(test_tbl)
+```
 
 
 
