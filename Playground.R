@@ -24,10 +24,10 @@ DDSA <- raw_DDSA%>%
 glimpse(DDSA)
 
 
-set.seed(777)
+set.seed(101)
 library(caTools)
 
-split = sample.split(DDSA$Attrition, SplitRatio = 0.70)
+split = sample.split(DDSA$Attrition, SplitRatio = 0.60)
 
 # Create training and testing sets
 train = subset(DDSA, split == TRUE)
