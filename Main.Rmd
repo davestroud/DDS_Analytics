@@ -18,6 +18,9 @@ library(corrr)
 library(readxl)
 library(tidyverse)
 library(glmnet)
+library(rpart)
+library(rpart.plot)
+library(randomForest)
 ```
 
 
@@ -101,6 +104,26 @@ table(test_tbl$Attrition)
 ```{r}
 237/nrow(test_tbl)
 ```
+
+```{r}
+modelCart = rpart(Attrition ~ ., data=train_tbl, method="class")
+#Plot the model
+prp(modelCart)
+```
+
+```{r}
+#Predict the test data
+predictionCart <- predict(modelCart, newdata=test_tbl, type="class")
+
+#CART Accuracy
+#Confusion matrix 
+t1 <- table(test_tbl$Attrition, predictionCart)
+
+
+#CART model accuracy
+(t1[1]+t1[4])/(nrow(test_tbl))
+```
+
 
 
 
