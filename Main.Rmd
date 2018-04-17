@@ -8,9 +8,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-library(tidyquant)
 library(rsample)
-library(recipes)
 library(yardstick)
 library(corrr)
 library(readxl)
