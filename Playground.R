@@ -13,6 +13,7 @@ library(rpart)
 library(rpart.plot)
 library(randomForest)
 
+# Load raw data
 raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
 
 # Change characters to factors for more meaningfull analysis
@@ -20,6 +21,7 @@ DDSA <- raw_DDSA%>%
   mutate_if(is.character, as.factor) %>%
   select(Attrition, everything())
 
+# Glimpse is a better way to view the data
 glimpse(DDSA)
 
 
@@ -27,6 +29,7 @@ glimpse(DDSA)
 set.seed(101)
 library(caTools)
 
+# Split ratio for training and test sets
 split = sample.split(DDSA$Attrition, SplitRatio = 0.60)
 
 # Create training and testing sets
