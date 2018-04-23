@@ -24,7 +24,7 @@ library(randomForest)
 # Load raw data
 raw_DDSA <- read_excel("CaseStudy2-data.xlsx")
 
-# Change characters to factors for more meaningfull analysis
+# Change characters to factors for more meaningful analysis
 DDSA <- raw_DDSA%>%
   mutate_if(is.character, as.factor) %>%
   select(Attrition, everything())
@@ -53,6 +53,11 @@ DDSA$RelationshipSatisfaction <- cut(DDSA$RelationshipSatisfaction, breaks = c(-
 DDSA$WorkLifeBalance <- cut(DDSA$WorkLifeBalance, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
 
 ```
+
+
+
+
+
 
 
 ```{r}
