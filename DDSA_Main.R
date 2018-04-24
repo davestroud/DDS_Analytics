@@ -47,7 +47,10 @@ ggplot(data = DDSA) +
 # Color each point based on the Gender of the participant
 ggplot(data=DDSA) +
   geom_point(mapping = aes(x = Age, y = MonthlyIncome, color=Gender)) +
-  geom_smooth(mapping = aes(x = Age, y = MonthlyIncome))
+  geom_smooth(mapping = aes(x = Age, y = MonthlyIncome)) + 
+  xlab('Age') + ylab('Income') +
+  ggtitle('Age vs Income') +
+  theme(plot.title = element_text(hjust = 0.5))
 
 # Split test/training sets ~ uses the rsample package
 set.seed(100)
@@ -110,4 +113,37 @@ attrition_variables <- DDSA %>%
 attrition_variables
 
 
+ggplot(DDSA, aes(JobRole, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge")+
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Job Role') +
+  theme(plot.title = element_text(hjust = 0.5))
+ 
 
+ggplot(DDSA, aes(DistanceFromHome, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Distance from Home') +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(DDSA, aes(RelationshipSatisfaction, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Relationship Status') +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(DDSA, aes(WorkLifeBalance, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Work/Life Balance') +
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+ggplot(DDSA, aes(Gender, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Gender') +
+  theme(plot.title = element_text(hjust = 0.5))
+  
