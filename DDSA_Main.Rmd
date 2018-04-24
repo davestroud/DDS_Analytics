@@ -18,6 +18,7 @@ library(glmnet)
 library(rpart)
 library(rpart.plot)
 library(randomForest)
+library(qwraps2)
 ```
 
 ```{r}
@@ -39,6 +40,7 @@ attach(DDSA)
 # View summary statistics
 summary(DDSA)
 ```
+
 
 
 ```{r}
