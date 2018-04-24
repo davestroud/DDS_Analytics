@@ -146,4 +146,26 @@ ggplot(DDSA, aes(Gender, ..count.., fill = factor(Attrition))) +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle('Attrition Based on Gender') +
   theme(plot.title = element_text(hjust = 0.5))
+
+
+qplot(DDSA$MonthlyIncome,
+      geom="histogram",binwidth = 500, main = "Histogram for Monthly Income",
+      xlab = "Monthly Income",
+      fill=I("light blue"),
+      col=I("orange"))
+
+
+qplot(DDSA$Age,
+      geom="histogram",binwidth = 5, main = "Histogram for Age",
+      xlab = "Age",
+      fill=I("light blue"),
+      col=I("orange"))
+
+qplot(DDSA$MonthlyIncome,
+      geom="histogram",binwidth = 500, main = "Histogram for Monthly Income",
+      xlab = "Monthly Income",
+      fill=I("light blue"),
+      col=I("orange"))
+
+
   
