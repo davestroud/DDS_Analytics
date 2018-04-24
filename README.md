@@ -4,37 +4,6 @@
 
 
 
-### Summary of Data
-
-#### Data Set has 1,470 observations with 35 variables. Nine of the variables are categorial, while the remaining 26 are numeric. 
-
-##### Converted all char variables to factors; for more meaninful analysis
-
-#### Changed DistanceFromHome, RelationshipSatisfaction and WorkLifeBalance to categorical variable to satisfy the requirement of having a Life Satisfaction variable. 
-
-#### Is there a relationship between Age and Income. Color each point based on the Gender of the participant. 
-
-#### What about Life Satisfaction? Need to make an index ~  
-
-#### Changed Attrition variable to a factor from a string to prepare for logistic regression analysis. 
-
-#### The fundamental idea behind a random forest is to combine many decision trees into a single model.
-
-#### To understand the random forest model, we must first learn about the decision tree, the basic building block of a random forest
-
-#### Confusion Matrix info: http://cs229.stanford.edu/section/evaluation_metrics.pdf
-
-# Random Forest info: https://medium.com/@williamkoehrsen/random-forest-simple-explanation-377895a60d2d
-
-#### How to interpret confusion matrix for Random Forest https://stats.stackexchange.com/questions/30691/how-to-interpret-oob-and-confusion-matrix-for-random-forest
-
-#### Need to add ROC curve to supplement OOB and confusion matrix info.
-
-
-#### Stroud todo:
-#### ~ add more EDA graphics
-#### ~ write out interpretation for the models and their results
-#### ~ it appears that the results are solid and errors are low...verify!!!
 
 
 
