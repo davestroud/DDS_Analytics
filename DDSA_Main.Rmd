@@ -152,4 +152,30 @@ modelRf = randomForest(Attrition ~ ., data=train_tbl, ntree = 100, mtry = 5, imp
 print(modelRf)
 ```
 
+```{r}
+#OOB vs No. Of Trees
+# Out-of-bag (OOB) error ~ a method of measuring the prediction error of random forests, 
+# boosted decision trees, and other machine learning models utilizing bootstrap aggregating 
+#(bagging) to sub-sample data samples used for training.
+plot(modelRf, main="")
+legend("topright", c("OOB", "0", "1"), text.col=1:6, lty=1:3, col=1:3)
+title(main="Error Rates Random Forest")
+
+```
+
+```{r}
+## List the importance of the variables.
+impVar <- round(randomForest::importance(modelRf), 2)
+impVar[order(impVar[,3], decreasing=TRUE),]
+
+```
+
+```{r}
+# Most important variables of attrition
+attrition_variables <- DDSA %>%
+  tibble::as_tibble() %>%
+  select(Attrition, OverTime,Age, MonthlyIncome) %>%
+  rowid_to_column(var = "Case")
+attrition_variables
+```
 
