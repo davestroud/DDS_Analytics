@@ -161,9 +161,9 @@ qplot(DDSA$Age,
       fill=I("light blue"),
       col=I("orange"))
 
-qplot(DDSA$MonthlyIncome,
-      geom="histogram",binwidth = 500, main = "Histogram for Monthly Income",
-      xlab = "Monthly Income",
+qplot(DDSA$YearsAtCompany,
+      geom="histogram",binwidth = 2, main = "Histogram for Years at the company",
+      xlab = "Years at company",
       fill=I("light blue"),
       col=I("orange"))
 
