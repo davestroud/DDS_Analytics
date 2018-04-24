@@ -36,15 +36,60 @@ attach(DDSA)
 ```
 
 ```{r}
-
+# View summary statistics
+summary(DDSA)
 ```
 
 
+```{r}
+# Changed the following variables to categorical to eventually have a LifeSatisfaction variable
+DDSA$DistanceFromHome <- cut(DDSA$DistanceFromHome, breaks = c(-Inf, 9, 21, Inf), labels=c("Poor", "Fair", "Good"))
+
+DDSA$RelationshipSatisfaction <- cut(DDSA$RelationshipSatisfaction, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
+
+DDSA$WorkLifeBalance <- cut(DDSA$WorkLifeBalance, breaks = c(-Inf, 2, 3, Inf), labels=c("Poor", "Fair", "Good"))
+```
 
 
+```{r}
+# Chart depicting Gender vs attrition
+ggplot(DDSA, aes(Gender, ..count.., fill = factor(Attrition))) + 
+  geom_bar(position="dodge") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  ggtitle('Attrition Based on Gender') +
+  theme(plot.title = element_text(hjust = 0.5))
+```
 
 
+```{r}
+# Chart depicting Monthly Income vs attrition
+qplot(DDSA$MonthlyIncome,
+      geom="histogram",binwidth = 500, main = "Histogram for Monthly Income",
+      xlab = "Monthly Income",
+      fill=I("light blue"),
+      col=I("orange"))
 
+```
+
+```{r}
+# Chart depicting Age vs attrition
+qplot(DDSA$Age,
+      geom="histogram",binwidth = 5, main = "Histogram for Age",
+      xlab = "Age",
+      fill=I("light blue"),
+      col=I("orange"))
+```
+
+
+```{r}
+# Chart depicting Years at Company vs attrition
+qplot(DDSA$YearsAtCompany,
+      geom="histogram",binwidth = 2, main = "Histogram for Years at the company",
+      xlab = "Years at company",
+      fill=I("light blue"),
+      col=I("orange"))
+
+```
 
 
 
