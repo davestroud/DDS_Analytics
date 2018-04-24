@@ -112,35 +112,35 @@ attrition_variables <- DDSA %>%
   rowid_to_column(var = "Case")
 attrition_variables
 
-
+# Chart depicting Job role vs attrition
 ggplot(DDSA, aes(JobRole, ..count.., fill = factor(Attrition))) + 
   geom_bar(position="dodge")+
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle('Attrition Based on Job Role') +
   theme(plot.title = element_text(hjust = 0.5))
  
-
+# Chart depicting Distance from home vs attrition
 ggplot(DDSA, aes(DistanceFromHome, ..count.., fill = factor(Attrition))) + 
   geom_bar(position="dodge") +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle('Attrition Based on Distance from Home') +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+# Chart depicting Relationship satisfaction vs attrition
 ggplot(DDSA, aes(RelationshipSatisfaction, ..count.., fill = factor(Attrition))) + 
   geom_bar(position="dodge") +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle('Attrition Based on Relationship Status') +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+# Chart depicting work life balance vs attrition
 ggplot(DDSA, aes(WorkLifeBalance, ..count.., fill = factor(Attrition))) + 
   geom_bar(position="dodge") +
   theme(axis.text.x = element_text(angle = 90)) +
   ggtitle('Attrition Based on Work/Life Balance') +
   theme(plot.title = element_text(hjust = 0.5))
 
-
+# Chart depicting Job role vs attrition
 ggplot(DDSA, aes(Gender, ..count.., fill = factor(Attrition))) + 
   geom_bar(position="dodge") +
   theme(axis.text.x = element_text(angle = 90)) +
