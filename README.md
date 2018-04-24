@@ -8,7 +8,7 @@
 
 #### Data Set has 1,470 observations with 35 variables. Nine of the variables are categorial, while the remaining 26 are numeric. 
 
-##### Converted all char variables to factors; for more meaninfull analysis
+##### Converted all char variables to factors; for more meaninful analysis
 
 #### Changed DistanceFromHome, RelationshipSatisfaction and WorkLifeBalance to categorical variable to satisfy the requirement of having a Life Satisfaction variable. 
 
@@ -34,7 +34,7 @@
 #### Stroud todo:
 #### ~ add more EDA graphics
 #### ~ write out interpretation for the models and their results
-#### ~ 
+#### ~ it appears that the results are solid and errors are low...verify!!!
 
 
 
