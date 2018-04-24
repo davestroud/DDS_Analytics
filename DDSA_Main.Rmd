@@ -92,9 +92,40 @@ qplot(DDSA$YearsAtCompany,
 ```
 
 
+```{r}
+# Is there a relationship between Age and Income. 
+# Color each point based on the Gender of the participant
+ggplot(data=DDSA) +
+  geom_point(mapping = aes(x = Age, y = MonthlyIncome, color=Gender)) +
+  geom_smooth(mapping = aes(x = Age, y = MonthlyIncome)) + 
+  xlab('Age') + ylab('Income') +
+  ggtitle('Age vs Income') +
+  theme(plot.title = element_text(hjust = 0.5))
+```
 
 
+```{r}
+# Split test/training sets ~ uses the rsample package
+set.seed(100)
+train_test_split <- initial_split(DDSA, prop = 0.8)
+train_test_split
 
+# Retrieve train and test sets
+train_tbl <- training(train_test_split)
+test_tbl <- testing(train_test_split)
+```
+
+```{r}
+table(test_tbl$Attrition)
+237/nrow(test_tbl)
+```
+
+```{r}
+modelCart = rpart(Attrition ~ ., data=train_tbl, method="class")
+#Plot the model
+prp(modelCart)
+
+```
 
 
 
